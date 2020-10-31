@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://screens/main_menu/btn.continue.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/main_menu/btn.new_game.tscn" type="PackedScene" id=2]
+[ext_resource path="res://screens/main_menu/btn.quit_game.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/connection_120.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/fonts/munro_s24.tres" type="DynamicFont" id=5]
+
+[node name="main_menu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="."]
+margin_top = 60.0
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="title" type="Label" parent="menu"]
+margin_right = 1280.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.862745, 0.0784314, 0.235294, 1 )
+text = "The Beast"
+align = 1
+valign = 2
+
+[node name="center_row" type="HBoxContainer" parent="menu"]
+margin_top = 120.0
+margin_right = 1280.0
+margin_bottom = 632.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+alignment = 1
+
+[node name="buttons" type="VBoxContainer" parent="menu/center_row"]
+margin_left = 509.0
+margin_right = 771.0
+margin_bottom = 512.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new_game" parent="menu/center_row/buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+margin_top = 124.0
+margin_right = 262.0
+margin_bottom = 192.0
+
+[node name="continue" parent="menu/center_row/buttons" instance=ExtResource( 1 )]
+anchor_right = 0.0
+margin_top = 222.0
+margin_right = 262.0
+margin_bottom = 290.0
+
+[node name="quit_game" parent="menu/center_row/buttons" instance=ExtResource( 3 )]
+anchor_right = 0.0
+margin_top = 320.0
+margin_right = 262.0
+margin_bottom = 388.0
+
+[node name="footer" type="Label" parent="menu"]
+margin_top = 632.0
+margin_right = 1280.0
+margin_bottom = 660.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.827451, 0.752941, 0.827451, 1 )
+text = "Version 0.1.0 - Mauss Studio"
+align = 1
+valign = 2
+[connection signal="pressed" from="menu/center_row/buttons/quit_game" to="menu/center_row/buttons/quit_game" method="_on_new_game_pressed"]

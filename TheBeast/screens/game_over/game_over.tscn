@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://screens/game_over/btn.main_menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/connection_120.tres" type="DynamicFont" id=2]
+[ext_resource path="res://screens/game_over/btn.quit_game.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screens/game_over/btn.continue.tscn" type="PackedScene" id=4]
+
+[node name="game_over" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.380392, 0.0666667, 0.0666667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 100
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="game_over" type="Label" parent="menu"]
+margin_top = 144.0
+margin_right = 1280.0
+margin_bottom = 264.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="VBoxContainer" parent="menu"]
+margin_top = 364.0
+margin_right = 1280.0
+margin_bottom = 576.0
+alignment = 1
+
+[node name="center_continue" type="HBoxContainer" parent="menu/buttons"]
+margin_right = 1280.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="continue" parent="menu/buttons/center_continue" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_left = 535.0
+margin_right = 745.0
+
+[node name="center_main_menu" type="HBoxContainer" parent="menu/buttons"]
+margin_top = 72.0
+margin_right = 1280.0
+margin_bottom = 140.0
+alignment = 1
+
+[node name="main_menu" parent="menu/buttons/center_main_menu" instance=ExtResource( 1 )]
+anchor_right = 0.0
+margin_left = 515.0
+margin_right = 765.0
+
+[node name="center_quit_game" type="HBoxContainer" parent="menu/buttons"]
+margin_top = 144.0
+margin_right = 1280.0
+margin_bottom = 212.0
+alignment = 1
+
+[node name="quit_game" parent="menu/buttons/center_quit_game" instance=ExtResource( 3 )]
+anchor_right = 0.0
+margin_left = 515.0
+margin_right = 765.0

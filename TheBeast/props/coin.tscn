@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sprites/fantasy-pack/#1 - Transparent Icons.png" type="Texture" id=1]
+[ext_resource path="res://scripts/area_trigger.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.2764, 11.5849 )
+
+[node name="coin" type="Area2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+scene_name = "coin"
+
+[node name="texture" type="Sprite" parent="."]
+scale = Vector2( 1.1, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 227, 389, 25, 21 )
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
