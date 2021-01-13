@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://screens/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset/StoneWorld.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://screens/area_trigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://screens/hud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://props/coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://props/ambience.tscn" type="PackedScene" id=7]
 
 [node name="stage_2" type="Node2D"]
 
@@ -39,3 +40,5 @@ position = Vector2( -130.411, 1702.2 )
 
 [node name="coin2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1052.18, 1438.26 )
+
+[node name="ambience" parent="." instance=ExtResource( 7 )]
