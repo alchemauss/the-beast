@@ -13,11 +13,22 @@ var jump_counter = 0
 var teleported = false
 
 
+func check_collision():
+	for i in range(get_slide_count()):
+		var collision = get_slide_collision(i)
+		return collision.collider is TileMap
+
+
 func teleport_player():
 	if Input.get_action_strength("right"):
-		global_position.x += 240
+		self.position.x += 240
+		if check_collision():
+			self.position.y -= 50
+
 	elif Input.get_action_strength("left"):
-		global_position.x -= 240
+		self.position.x -= 240
+		if check_collision():
+			self.position.y -= 50
 
 
 func _input(event):
