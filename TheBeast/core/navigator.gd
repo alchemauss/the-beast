@@ -14,6 +14,8 @@ func _on_main_menu_pressed():
 
 
 func _on_continue_pressed():
+	game.collected = 0
+	game.coins = 2 if int(game.last_stage) == 2 else 0
 	return get_tree().change_scene("res://zones/stage_" + str(game.last_stage) + ".tscn")
 
 
